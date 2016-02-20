@@ -7,6 +7,6 @@
 int main()
 {   
     printf("This is Main Program.\nMy RealUID is: %d\nMy EffectiveUID is: %d\n", getuid(), geteuid());
-    execl("getID", "getID", NULL);
+    execl("getID.out", "getID.out", NULL);
     return 0;
 }

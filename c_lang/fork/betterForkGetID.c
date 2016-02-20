@@ -17,12 +17,12 @@ int main()
 	wait(NULL);
 	printf("This is Parent.\nMy RealUID is: %d\nMy EffectiveUID is: %d\n", getuid(), geteuid());
 //	execl("/usr/bin/whoami", "/usr/bin/whoami", NULL);
-	execl("/home/bankde/Desktop/Learning/fork/getID", "/home/bankde/Desktop/Learning/fork/getID", NULL);
+	execl("getID.out", "getID.out", NULL);
     }
     else {
 	printf("This is Child.\nMy RealUID is: %d\nMy EffectiveUID is: %d\n", getuid(), geteuid());
 //	execl("/usr/bin/whoami", "/usr/bin/whoami", NULL);
-	execl("/home/bankde/Desktop/Learning/fork/getID", "/home/bankde/Desktop/Learning/fork/getID", NULL);
+	execl("getID.out", "getID.out", NULL);
     }
     return 0;
 }

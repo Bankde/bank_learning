@@ -7,6 +7,6 @@
 int main()
 {   
     printf("This is Main Program.\nMy RealUID is: %d\nMy EffectiveUID is: %d\n", getuid(), geteuid());
-    system("/home/bankde/Desktop/Learning/fork/getID");
+    system("getID.out");
     return 0;
 }
