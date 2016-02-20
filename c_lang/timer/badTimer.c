@@ -1,11 +1,19 @@
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/time.h>
+#include <unistd.h>
 
 #define threadNum 10
 
 int *runTable;
 
+double getTimeMs()
+{
+	struct timeval tv;
+	gettimeofday(&tv, NULL);
+	return (double)((tv.tv_sec) + 0.000001*tv.tv_usec);
+}
 /* This is our thread function.  It is like main(), but for a thread*/
 void *loop(void *arg)
 {
@@ -34,7 +42,7 @@ void *timer(void *arg)
 			sum = sum + runTable[index];
 		}
 		// I don't reset runTable so it won't cause racing condition from multithread-write
-		printf("========== Timer Counter: %d ==========\n", (sum - old));
+		printf("=== Timer Counter: %d \t\tTime: %f ===\n", (sum - old), getTimeMs());
 		old = sum;
 	}
 	return NULL;
