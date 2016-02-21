@@ -1,9 +1,9 @@
-#include <pthread.h>
 #include <stdio.h>
 #include <sys/types.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <sys/syscall.h>
+#include <pthread.h>
 
 // The result is threadID is increasing (so they won't be dup)
 // The start value seems to accumulate from any program (OS assign value ?)
@@ -21,7 +21,6 @@ void *threadFunc(void *arg)
 	if (tid < min) min = tid;
 	if (tid > max) max = tid;
 	printf("%d -- PID: %d\t\tThreadID: %d\n", num, getpid(), tid);
-	return NULL;
 }
 
 int main(int argc, char** argv)
