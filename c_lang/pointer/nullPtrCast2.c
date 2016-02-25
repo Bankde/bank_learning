@@ -12,6 +12,8 @@ int func1(void *argv)
 
 int main(int argc, char** argv)
 {
+	// array and pointer is the same (assembly gdb confirmed)
+	// char c[] = "ABCD"
 	char* c = "ABCD";
 	func1(c);
 	return 0;	
