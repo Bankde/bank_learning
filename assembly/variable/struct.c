@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Struct stack structure is as followed:
+// --- return pointer && base stack --- //
+// --- struct.int three --- //
+// --- struct.int two --- //
+// --- struct.int one --- //
+
 struct struct_three{
 	int one;
 	int two;
