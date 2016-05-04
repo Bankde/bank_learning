@@ -2,10 +2,20 @@
 #include <stdlib.h>
 
 // Struct stack structure is as followed:
+// --- High memory address --- //
 // --- return pointer && base stack --- //
-// --- struct.int three --- //
-// --- struct.int two --- //
-// --- struct.int one --- //
+// --- struct.three --- //
+// --- struct.two --- //
+// --- struct.one --- //
+// --- ESP --- //
+
+// Struct heap structure is as followed:
+// --- High memory address --- //
+// --- struct.three --- //
+// --- struct.two --- //
+// --- struct.one --- //
+// --- Low memory address --- //
+
 
 struct struct_three{
 	int one;
@@ -22,5 +32,10 @@ int main()
 	printf("One is %d\n", s.one);
 	printf("Two is %d\n", s.two);
 	printf("Three is %d\n", s.three);
+	struct struct_three* a = (struct struct_three*)malloc(sizeof(struct struct_three));
+	a->one = 4;
+	a->two = 5;
+	a->three = 6;
+	printf("One is %d\n", a->one);
 	return 0;
 }
