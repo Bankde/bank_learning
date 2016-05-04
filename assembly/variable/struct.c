@@ -9,7 +9,7 @@
 // --- struct.one --- //
 // --- ESP --- //
 
-// Struct heap structure is as followed:
+// Struct heap structure is as followed (apparently same as stack):
 // --- High memory address --- //
 // --- struct.three --- //
 // --- struct.two --- //
