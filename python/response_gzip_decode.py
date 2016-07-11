@@ -8,7 +8,7 @@ import gzip
 import urllib
 from httplib import HTTPSConnection
 
-conn = HTTPSConnection('xxx', 443, strict=True)
+conn = HTTPSConnection('localhost', 443, strict=True)
 conn.request('GET', '/')
 r = conn.getresponse()
 buf = StringIO.StringIO(r.read())
