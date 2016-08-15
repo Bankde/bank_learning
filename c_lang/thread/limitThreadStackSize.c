@@ -1,6 +1,6 @@
 #include <pthread.h>
 #include <stdio.h>
-#define N 1000
+#define N 1024
 #define PI 3.1415926
 
 pthread_attr_t attr;
