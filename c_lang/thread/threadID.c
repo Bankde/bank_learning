@@ -8,8 +8,8 @@
 // The result is threadID is increasing (so they won't be dup)
 // The start value seems to accumulate from any program (OS assign value ?)
 // In ubuntu the max and min threadID are:
-// max pid: 131071
-// min pid: 300
+// max tid: 131071
+// min tid: 300
 
 pid_t max;
 pid_t min;

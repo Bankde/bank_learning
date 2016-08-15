@@ -34,7 +34,7 @@ int main(void)
 	}
 
 	printf("main waiting for thread to terminate...\n");
-	pthread_exit(NULL);
+	pthread_join(pth,NULL);
 
 	return 0;
 }
