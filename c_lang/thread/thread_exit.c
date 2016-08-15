@@ -16,9 +16,7 @@ void *threadFunc(void *arg)
 		++i;
 	}
 
-	char *a = malloc(20);
-	strcpy(a, "Test thread exit");
-	pthread_exit(a);
+	return NULL;
 }
 
 int main(void)
@@ -36,8 +34,7 @@ int main(void)
 	}
 
 	printf("main waiting for thread to terminate...\n");
-	char *b;
-	pthread_join(pth, &b);
-	printf("Return value is %s\n", b);
+	pthread_exit(NULL);
+
 	return 0;
 }
