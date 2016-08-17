@@ -7,9 +7,8 @@ pthread_cond_t oddTurn;
 pthread_cond_t evenTurn;
 
 /*
-Need to use WHILE instead of an IF because https://computing.llnl.gov/tutorials/pthreads/
+https://computing.llnl.gov/tutorials/pthreads/
 "If several threads are waiting for the same wake up signal, they will take turns acquiring the mutex, and any one of them can then modify the condition they all waited for. "
-Note: make sure you understand the term "take turn".
 Using WHILE or IF depends on application. (WHILE is recommended as it is usually safer)
 
 Signal will only wake up 1 thread that matches the cond (randomly picked by system)
