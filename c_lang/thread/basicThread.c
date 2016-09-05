@@ -1,5 +1,7 @@
 #include <pthread.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /* This is our thread function.  It is like main(), but for a thread*/
 void *threadFunc(void *arg)
@@ -16,7 +18,7 @@ void *threadFunc(void *arg)
 		++i;
 	}
 
-	char *a = malloc(20);
+	char *a = (char*)malloc(20);
 	strcpy(a, "Test thread exit");
 	pthread_exit(a);
 }
@@ -37,7 +39,7 @@ int main(void)
 
 	printf("main waiting for thread to terminate...\n");
 	char *b;
-	pthread_join(pth, &b);
+	pthread_join(pth, (void*)&b);
 	printf("Return value is %s\n", b);
 	return 0;
 }
