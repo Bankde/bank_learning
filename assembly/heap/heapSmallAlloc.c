@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+// https://sourceware.org/glibc/wiki/MallocInternals
+
 int main() {
   // also meta 0x21
   char* one = malloc(1);
@@ -45,6 +47,9 @@ int main() {
   // leave address to before 'e' as it is, perhaps already been read/save to somewhere else ?
   char* z = malloc(10);
   strcpy(z,"zzzz");
+  // this malloc at previous 'd' address (apparently, fastbin works like stack)
+  char* y = malloc(10);
+  strcpy(y,"yyyy");
   for (int i=0; i<10; i++) {
     printf("break %d\n", i);
     sleep(1);
@@ -52,3 +57,4 @@ int main() {
   printf("Done\n");
   return 0;
 }
+
