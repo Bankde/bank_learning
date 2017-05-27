@@ -3,6 +3,7 @@
 #include <string.h>
 
 // https://sourceware.org/glibc/wiki/MallocInternals
+// These allocation is fastbin.
 
 int main() {
   // also meta 0x21
