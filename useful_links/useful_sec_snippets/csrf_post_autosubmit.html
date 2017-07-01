@@ -1,0 +1,24 @@
+<form name="myForm" id="myForm" target="_myFrame" action="http://localhost/testCSRF" method="POST">
+    <p>
+        <input name="testForm" value="secret" />
+    </p>
+    <p>
+        <input type="submit" value="Submit" />
+    </p>
+</form>
+
+<script type="text/javascript">
+    window.onload=function(){
+        var auto = setTimeout(function(){ autoRefresh(); }, 100);
+
+        function submitform(){
+          alert('test');
+          document.forms["myForm"].submit();
+        }
+
+        function autoRefresh(){
+           clearTimeout(auto);
+           auto = setTimeout(function(){ submitform(); autoRefresh(); }, 10000);
+        }
+    }
+</script>

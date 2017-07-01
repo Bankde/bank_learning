@@ -1,0 +1,14 @@
+    Hello
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://localhost/testCSRF", true);
+        xhr.setRequestHeader("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
+        xhr.setRequestHeader("Accept-Language", "pl,en-US;q=0.7,en;q=0.3");
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.withCredentials = true;
+        var body = "test1=0&test2=1";
+        var aBody = new Uint8Array(body.length);
+        for (var i = 0; i < aBody.length; i++)
+          aBody[i] = body.charCodeAt(i);
+        xhr.send(new Blob([aBody]));
+    </script>
